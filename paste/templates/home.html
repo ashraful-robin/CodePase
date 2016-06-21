@@ -3,12 +3,8 @@
 {% block title %}Paste your Code Here | Ashraful Islam {% endblock %}
 
 {% block body %}
-{#    <code class="{{ code.language }}">#}
-{#        {{ result | safe }}#}
-{#    </code>#}
-
     <div>
-        <form method="POST" action="{% url 'codeView' code.id %}">
+        <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Paste">

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.http import HttpResponseRedirect
 # Create your views here.
 from .models import Paste
 from .forms import PasteForm
@@ -14,8 +14,8 @@ def home(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-    code = Paste.objects.last()
-    return render(request, 'home.html', {'form': form, 'code': code})
+        return HttpResponseRedirect(instance.id)
+    return render(request, 'home.html', {'form': form})
 
 
 def codeView(request, id):
