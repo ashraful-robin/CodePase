@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
 from django.http import HttpResponseRedirect
 # Create your views here.
 from .models import Paste
@@ -19,7 +20,7 @@ def home(request):
 
 
 def codeView(request, id):
-    code = Paste.objects.get(pk=id)
+    code = get_object_or_404(Paste, pk=id)
     lexer = get_lexer_by_name(code.language, stripall=True)
     formatter = HtmlFormatter(linenos=True, cssclass=code.style)
     result = highlight(code.new_paste, lexer, formatter)
