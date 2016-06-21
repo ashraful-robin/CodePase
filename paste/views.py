@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.http import HttpResponseRedirect
 # Create your views here.
 from .models import Paste
 from .forms import PasteForm
@@ -11,10 +11,12 @@ from pygments.formatters import HtmlFormatter
 
 def home(request):
     form = PasteForm(request.POST or None)
+    code = Paste.objects.last()
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-    code = Paste.objects.last()
+        return HttpResponseRedirect(code.id + 1)
+    
     return render(request, 'home.html', {'form': form, 'code': code})
 
 
