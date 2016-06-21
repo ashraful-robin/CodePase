@@ -3,12 +3,36 @@
 {% block title %} {% endblock %}
 
 {% block body %}
-
 <div class="container">
-	<h2>Title - {{ code.title }}</h2>
-	<h4>Author - {{ code.author }}</h4>
-	<code class="{{ code.language }}">
-    	{{ result | safe }}
-	</code>
+  <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+      <h2 style="float: right">
+          <a href="/"><button class="btn btn-lg btn-primary">Create New Paste</button></a>
+      </h2>
+        <h2>Title - {{ code.title }}</h2>
+        <h4>Author - {{ code.author }}</h4>
+        <h4>Language - {{ code.language }}</h4>
+        <code class="{{ code.style }}">
+            {{ result | safe }}
+        </code>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <h2>Author of the site</h2>
+        <div class="jumbotron">
+            <h3><span class="glyphicon glyphicon-user"></span> Ashraful Islam</h3>
+            <p>
+                <span class="glyphicon glyphicon-phone"></span> 01624153810 <br/>
+                <span class="glyphicon glyphicon-envelope"></span> ashrafulrobin3@gmail.com
+            </p>
+            <h4><u>Follow Me,</u> </h4>
+            <p style="float: left">
+                <a href="www.facebook.com/ThisIsMrRobin">Facebook</a>
+            </p>
+            <p style="float: Right">
+                <a href="www.twitter.com/ashraful_robin">Twitter</a>
+            </p>
+        </div>
+      </div>
+  </div>
 </div>
 {% endblock %}

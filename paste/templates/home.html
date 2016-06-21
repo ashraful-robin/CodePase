@@ -7,13 +7,13 @@
 	<div class="row">
 		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 			<div>
-				<h1 class="title">Mr Robin's Pastebin</h1>
+				<h2 class="title">Mr Robin's Pastebin</h2>
 			</div>
 		    <div class="jumbotron">
 		        <form class="form" method="POST">
 		            {% csrf_token %}
 		            {{ form.as_p }}
-		            <input class="btn btn-md btn-success" type="submit" value="Paste">
+		            <input class="btn btn-md btn-info" type="submit" value="Create New Paste">
 		        </form>
 		    </div>
 		</div>
@@ -26,6 +26,23 @@
 					</ul>
 				{% endfor %}
 			</div>
+		</div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+			<h2>Author of the site</h2>
+			<div class="jumbotron">
+				<h3><span class="glyphicon glyphicon-user"></span> Ashraful Islam</h3>
+                <p>
+                    <span class="glyphicon glyphicon-phone"></span> 01624153810 <br/>
+                    <span class="glyphicon glyphicon-envelope"></span> ashrafulrobin3@gmail.com
+                </p>
+                <h4><u>Follow Me,</u> </h4>
+                <p style="float: left">
+                    <a href="www.facebook.com/ThisIsMrRobin">Facebook</a>
+                </p>
+			    <p style="float: Right">
+                    <a href="www.twitter.com/ashraful_robin">Twitter</a>
+                </p>
+            </div>
 		</div>
 	</div>
 </div>
