@@ -3,11 +3,17 @@
 {% block title %}Paste your Code Here | Ashraful Islam {% endblock %}
 
 {% block body %}
-    <div>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Paste">
-        </form>
-    </div>
+	<div class="container">
+		<div>
+			<h1 class="title">Mr Robin's Pastebin</h1>
+		</div>
+	    <div class="jumbotron">
+	        <form method="POST">
+	            {% csrf_token %}
+	            {{ form.as_p }}
+	            <input class="btn btn-md btn-success" type="submit" value="Paste">
+	        </form>
+	    </div>
+	</div>
+	
 {% endblock %}

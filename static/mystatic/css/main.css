@@ -1,3 +1,7 @@
+/*==============================================================*/
+
+/* This is auto generated from pygments */
+/*But I can override this easily :)*/
 .hll { background-color: #ffffcc }
 .c { color: #008000 } /* Comment */
 .err { border: 1px solid #FF0000 } /* Error */
@@ -33,3 +37,11 @@
 .sr { color: #a31515 } /* Literal.String.Regex */
 .s1 { color: #a31515 } /* Literal.String.Single */
 .ss { color: #a31515 } /* Literal.String.Symbol */
+
+/*=================================================================*/
+
+/*My Custom CSS*/
+
+.title{
+	color: orange;
+}

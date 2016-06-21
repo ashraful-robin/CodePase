@@ -3,7 +3,12 @@
 {% block title %} {% endblock %}
 
 {% block body %}
-<code class="{{ code.language }}">
-    {{ result | safe }}
-</code>
+
+<div class="container">
+	<h2>Title - {{ code.title }}</h2>
+	<h4>Author - {{ code.author }}</h4>
+	<code class="{{ code.language }}">
+    	{{ result | safe }}
+	</code>
+</div>
 {% endblock %}
