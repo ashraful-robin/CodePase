@@ -1,11 +1,25 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %} {% endblock %}</title>
+    {# CSS Part #}
+    <link href="{% static 'mystatic/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'mystatic/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'mystatic/css/bootstrap-theme.css' %}" rel="stylesheet">
+    <link href="{% static 'mystatic/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+    <link href="{% static 'mystatic/css/main.css' %}" rel="stylesheet">
+
+    {# JS Part #}
+    <script src="{%static 'mystatic/js/bootstrap.js' %}"></script>
+	<script src="{%static 'mystatic/js/bootstrap.min.js' %}"></script>
+	<script src="{%static 'mystatic/js/npm.js' %}"></script>
 </head>
 <body>
 {% block body %}
+
+
 
 {% endblock %}
 </body>
