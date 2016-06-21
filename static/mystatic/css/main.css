@@ -45,3 +45,10 @@
 .title{
 	color: orange;
 }
+.form p{
+	/*color: red;*/
+}
+.form textarea{
+	height: 300px;
+	width: 100%;
+}

@@ -11,12 +11,13 @@ from pygments.formatters import HtmlFormatter
 
 
 def home(request):
+    pastes = Paste.objects.all().order_by('-id')[:5]
     form = PasteForm(request.POST or None)
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
         return HttpResponseRedirect(instance.id)
-    return render(request, 'home.html', {'form': form})
+    return render(request, 'home.html', {'form': form, 'pastes': pastes})
 
 
 def codeView(request, id):

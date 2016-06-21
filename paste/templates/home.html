@@ -3,17 +3,32 @@
 {% block title %}Paste your Code Here | Ashraful Islam {% endblock %}
 
 {% block body %}
-	<div class="container">
-		<div>
-			<h1 class="title">Mr Robin's Pastebin</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+			<div>
+				<h1 class="title">Mr Robin's Pastebin</h1>
+			</div>
+		    <div class="jumbotron">
+		        <form class="form" method="POST">
+		            {% csrf_token %}
+		            {{ form.as_p }}
+		            <input class="btn btn-md btn-success" type="submit" value="Paste">
+		        </form>
+		    </div>
 		</div>
-	    <div class="jumbotron">
-	        <form method="POST">
-	            {% csrf_token %}
-	            {{ form.as_p }}
-	            <input class="btn btn-md btn-success" type="submit" value="Paste">
-	        </form>
-	    </div>
+		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+			<h2>Recent Public Pastes...</h2>
+			<div class="jumbotron">
+				{% for paste in pastes %}
+					<ul>
+						<li><a href="{% url 'codeView' paste.id %}">{{ paste.title }}</a></li>
+					</ul>
+				{% endfor %}
+			</div>
+		</div>
 	</div>
+</div>
+	
 	
 {% endblock %}
