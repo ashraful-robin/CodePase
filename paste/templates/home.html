@@ -20,6 +20,13 @@
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 			<h2>Recent Public Pastes...</h2>
 			<div class="jumbotron">
+
+			{% if loggedIn %}
+				<h4>Welcome <strong>{{ current_user }}</strong></h4>
+			{% else %}
+				<a href="{% url 'login' %}"><button class="btn btn-block btn-primary">Login</button></a>
+			{% endif %}
+				
 				{% for paste in pastes %}
 					<ul>
 						<li><a href="{% url 'codeView' paste.id %}">{{ paste.title }}</a></li>
